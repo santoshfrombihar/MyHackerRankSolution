@@ -1,0 +1,22 @@
+
+
+
+int getHeight(struct node* temp) {
+    
+    // Write your code here
+    int leftHeight = 0;
+    int rightHeight = 0;
+
+    if (temp->left != NULL) {
+        leftHeight = 1 + getHeight(temp->left);
+    }
+
+    if (temp->right != NULL) {
+        rightHeight = 1 + getHeight(temp->right);
+    }
+
+    return leftHeight > rightHeight ? leftHeight : rightHeight;
+}
+
+
+
