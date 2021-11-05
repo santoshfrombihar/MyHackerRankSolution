@@ -1,0 +1,48 @@
+
+
+// Complete the reverse function below.
+
+/*
+ * For your reference:
+ *
+ * DoublyLinkedListNode {
+ *     int data;
+ *     DoublyLinkedListNode* next;
+ *     DoublyLinkedListNode* prev;
+ * };
+ *
+ */
+DoublyLinkedListNode* reverse(DoublyLinkedListNode* head) {
+     
+     DoublyLinkedListNode *temp1,*temp2,*main1;
+     
+      
+      while(head->next!=NULL)
+      {
+          head=head->next;
+      }
+      
+      head->next=head->prev;
+      
+     temp1=head;
+     main1=head;
+     
+     
+     
+     while(main1!=NULL)
+     {
+       
+     temp2=main1->prev;
+     main1->prev=temp1;
+     main1->next=temp2;
+     temp1=main1;
+     main1=main1->next;
+     }
+     
+       
+      
+       
+       return head;
+      
+}
+
